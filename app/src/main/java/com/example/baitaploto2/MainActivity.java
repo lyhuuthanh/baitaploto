@@ -3,9 +3,11 @@ package com.example.baitaploto2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 // khai bao
@@ -26,6 +28,29 @@ public class MainActivity extends AppCompatActivity {
         mrandom = findViewById(R.id.random);
         mchoilai = findViewById(R.id.choilai);
         mketqua = findViewById(R.id.Ketqua);
+
+        mrandom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chuoisomin = mnhapsomin.getText().toString();
+                chuoisomax = mnhapsomax.getText().toString();
+
+                if (!chuoisomin.equals("") || !chuoisomax.equals("")){
+                    Toast.makeText(MainActivity.this,"Bạn nhập thiếu thông tin",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                xuatsomin = Integer.parseInt(chuoisomin);
+                xuatsomax = Integer.parseInt(chuoisomax);
+
+                if (xuatsomin > xuatsomax){
+                    Toast.makeText(MainActivity.this,"Bạn nhập sai thông tin rồi",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+
+            }
+        });
 
     }
 }
