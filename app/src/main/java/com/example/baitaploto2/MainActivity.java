@@ -9,13 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 // khai bao
     EditText mnhapsomin, mnhapsomax;
     Button mrandom, mchoilai;
     TextView mketqua;
     String chuoisomin, chuoisomax;
-    int xuatsomin, xuatsomax;
+    int xuatsomin, xuatsomax, giatrixuat;
 
 
     @Override
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
+mrandom = new Random();
+                giatrixuat = mrandom.nextInt(xuatsomax - xuatsomin + 1) + xuatsomin;
+                mketqua.setText(String.valueOf(giatrixuat));
 
 
             }
