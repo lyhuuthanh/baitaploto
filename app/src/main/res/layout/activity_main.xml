@@ -1,18 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/trochoiloto"
+        android:text="TRÒ CHƠI LOTO"
+        android:textSize="30sp"
+        android:textColor="#fd2400"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/nhapsomin"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/trochoiloto"
+        android:hint="Nhập số min"
+        android:inputType="number"
+        android:maxLength="6"
+        android:imeOptions="actionNext"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/nhapsomax"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        android:maxLength="6"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/nhapsomin"
+        android:hint="Nhập số max"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="Random"
+        android:id="@+id/random"
+        android:textSize="30sp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/nhapsomax"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="Chơi Lại"
+        android:id="@+id/choilai"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/random"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/nhapsomax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textColor="#D81B60"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        tools:text="1-2-3-4-5-6-7"
+        android:id="@+id/Ketqua"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
